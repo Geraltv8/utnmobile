@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     tools:context=".activity.MainActivity">
 
     <LinearLayout
@@ -22,6 +23,7 @@
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
+            android:backgroundTint="@color/orange"
             android:theme="?attr/actionBarTheme" />
 
         <ImageView
@@ -33,7 +35,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="306dp">
+            android:layout_height="242dp">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -61,13 +63,15 @@
                     android:id="@+id/btnLast"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Button" />
+                    android:backgroundTint="@color/orange"
+                    android:text="Ultima imagen" />
 
                 <Button
                     android:id="@+id/btndetail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Button" />
+                    android:backgroundTint="@color/orange"
+                    android:text="ver detalle" />
             </LinearLayout>
 
         </LinearLayout>

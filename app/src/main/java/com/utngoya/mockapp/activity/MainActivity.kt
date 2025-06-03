@@ -33,79 +33,55 @@ class MainActivity : AppCompatActivity() {
         b = ActivityMainBinding.inflate(layoutInflater)
         setContentView(b.root)
         //------------------------------------------------------------
+        Picasso.get()
+            .load("https://dynamic.brandcrowd.com/template/preview/design/2ed9e22f-e7d7-4997-b9f0-603dff68d3d1?v=4&designTemplateVersion=2&size=design-preview-standalone-1x")
+            .resize(600, 200)
+            .into(b.imgBanner)
+
         val imageList = listOf(
             ImagesModel(
-                "https://upload.wikimedia.org/wikipedia/commons/2/25/Queen_%E2%80%93_montagem_%E2%80%93_new.png",
-                "Queen",
-                "Legendaria banda británica liderada por Freddie Mercury.",
-                "Formada en 1970",
-                500
+                "https://media.gettyimages.com/id/109767921/es/foto/drummer-roger-taylor-singer-freddie-mercury-guitarist-brian-may-and-bassist-john-deacon-of.jpg?s=612x612&w=gi&k=20&c=uGCnpa77kIkTc5HcITUCfe7Mh0pWk12h4kXsnvehWvs=",
+                "Queen - Legendaria banda británica liderada por Freddie Mercury.",
+                "www.gettyimages.es",
+                "Hulton Archive",
+                1973
             ),
             ImagesModel(
-                "https://upload.wikimedia.org/wikipedia/commons/2/26/Linkin_Park_in_2014.jpg",
-                "Linkin Park",
-                "Banda estadounidense de rock alternativo y nu metal.",
-                "Formada en 1996",
-                450
+                "https://media.gettyimages.com/id/2205606892/es/foto/los-angeles-california-emily-armstrong-joe-hahn-mike-shinoda-and-colin-brittain-of-linkin-park.jpg?s=1024x1024&w=gi&k=20&c=Ypk8Njss44ZKYpz7UUbnCM6qQ4f5uJKto0YBBRlc90U=",
+                "Linkin Park - Banda estadounidense de rock alternativo y nu metal.",
+                "www.gettyimages.es",
+                "Getty Images North America",
+                2025
             ),
             ImagesModel(
-                "https://upload.wikimedia.org/wikipedia/commons/f/f7/Nirvana_around_1992.jpg",
-                "Nirvana",
-                "Pioneros del grunge liderados por Kurt Cobain.",
-                "Formada en 1987",
-                470
+                "https://media.gettyimages.com/id/181809003/es/foto/american-rock-group-nirvana-backstage-in-frankfurt-germany-12th-november-1991-left-to-right.jpg?s=612x612&w=gi&k=20&c=nq_tqdwaPMI7PVKHB55_vyu8cadZEMP2PdHbdoB1uRw=",
+                "Nirvana - Pioneros del grunge liderados por Kurt Cobain.",
+                "www.gettyimages.es",
+                "Redferns",
+                1991            ),
+            ImagesModel(
+                "https://media.gettyimages.com/id/1481711679/es/foto/los-angeles-california-robert-trujillo-james-hetfield-lars-ulrich-and-kirk-hammett-of.jpg?s=1024x1024&w=gi&k=20&c=UqNR9PKDzV004oh-k41gYuMOonnYC6j4D7PyxeB705k=",
+                "Metallica - Banda icónica de heavy metal de EE.UU.",
+                "www.gettyimages.es",
+                "Getty Images North America",
+                2023
             ),
             ImagesModel(
-                "https://upload.wikimedia.org/wikipedia/commons/d/d1/Metallica_at_The_O2_London_2008.jpg",
-                "Metallica",
-                "Banda icónica de heavy metal de EE.UU.",
-                "Formada en 1981",
-                520
+                "https://media.gettyimages.com/id/73909162/es/foto/united-kingdom-pink-floyd-pose-for-a-publicity-shot-circa-1973.jpg?s=1024x1024&w=gi&k=20&c=m0lGjBaMg5wiTRLaZ_cmmbWexTSvTx0vEqT6Zhrqw-w=",
+                "Pink Floyd - Banda de rock psicodélico y progresivo.",
+                "www.gettyimages.es",
+                "Michael Ochs Archives",
+                1973
             ),
             ImagesModel(
-                "https://upload.wikimedia.org/wikipedia/commons/8/83/Pink_Floyd_1971.jpg",
-                "Pink Floyd",
-                "Banda de rock psicodélico y progresivo.",
-                "Formada en 1965",
-                510
+                "https://media.gettyimages.com/id/1745676838/es/foto/new-york-new-york-ronnie-wood-steve-jordan-mick-jagger-and-keith-richards-perform-during-the.jpg?s=1024x1024&w=gi&k=20&c=AD05aDSnvBv8Z8VkH3F8zNxzJzhB24N7CUlq9A3Qbs0=",
+                "The Rolling Stones - Una de las bandas más longevas del rock." ,
+                "www.gettyimages.es",
+                "Getty Images North America",
+                2023
             ),
-            ImagesModel(
-                "https://upload.wikimedia.org/wikipedia/commons/6/60/The_Rolling_Stones_1972.jpg",
-                "The Rolling Stones",
-                "Una de las bandas más longevas del rock.",
-                "Formada en 1962",
-                530
-            ),
-            ImagesModel(
-                "https://upload.wikimedia.org/wikipedia/commons/4/4c/Green_Day_2010.jpg",
-                "Green Day",
-                "Banda de punk rock californiana.",
-                "Formada en 1987",
-                400
-            ),
-            ImagesModel(
-                "https://upload.wikimedia.org/wikipedia/commons/5/50/The_Beatles_in_America.JPG",
-                "The Beatles",
-                "Los cuatro grandes de Liverpool.",
-                "Formada en 1960",
-                600
-            ),
-            ImagesModel(
-                "https://upload.wikimedia.org/wikipedia/commons/a/a0/RHCP_Lollapalooza_2016.jpg",
-                "Red Hot Chili Peppers",
-                "Fusión de rock, funk y alternativo.",
-                "Formada en 1983",
-                470
-            ),
-            ImagesModel(
-                "https://upload.wikimedia.org/wikipedia/commons/4/4f/ACDC_in_Manchester.jpg",
-                "AC/DC",
-                "Banda australiana de hard rock.",
-                "Formada en 1973",
-                550
-            )
         )
-
+        //------------------------------------------------------------------------------------------
         recyclerAdapter = RecyclerAdapter(imageList, this)
         b.recyclerView.apply{
             layoutManager = LinearLayoutManager(this@MainActivity)
